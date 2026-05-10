@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sorpresa Rosa 🌺</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    min-height:100vh;
+
+    background:
+    radial-gradient(circle at top left,#ffe0ea 0%,transparent 30%),
+    radial-gradient(circle at bottom right,#fff2c6 0%,transparent 30%),
+    linear-gradient(135deg,#ffd5e5,#fff2d7,#fff8f0);
+
+    font-family:'Poppins',sans-serif;
+    position:relative;
+}
+
+/* ================================= */
+/* ELEMENTOS FLOTANTES */
+/* ================================= */
+
+.floating{
+    position:absolute;
+    bottom:-100px;
+    animation:floatUp linear infinite;
+    opacity:0.85;
+    z-index:0;
+    pointer-events:none;
+    filter:drop-shadow(0 0 8px rgba(255,255,255,0.7));
+}
+
+@keyframes floatUp{
+
+    from{
+        transform:translateY(0) rotate(0deg);
+    }
+
+    to{
+        transform:translateY(-130vh) rotate(360deg);
+    }
+}
+
+/* ================================= */
+/* PANTALLA */
+/* ================================= */
+
+#lockScreen{
+
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+
+    z-index:5;
+}
+
+.lock-box{
+
+    width:100%;
+    max-width:920px;
+
+    background:rgba(255,255,255,0.85);
+
+    border-radius:40px;
+
+    padding:50px 30px;
+
+    text-align:center;
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+    0 15px 45px rgba(0,0,0,0.12),
+    0 0 35px rgba(255,182,193,0.18);
+
+    animation:fadeIn 1.5s ease;
+}
+
+.lock-title{
+
+    font-family:'Great Vibes',cursive;
+
+    color:#d63384;
+
+    font-size:4.7rem;
+
+    margin-bottom:18px;
+}
+
+.lock-subtitle{
+
+    color:#666;
+
+    font-size:1.12rem;
+
+    line-height:1.9;
+
+    max-width:700px;
+
+    margin:auto;
+
+    margin-bottom:35px;
+}
+
+/* ================================= */
+/* PALABRAS */
+/* ================================= */
+
+.words-area{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:720px;
+
+    height:340px;
+
+    margin:auto;
+
+    margin-bottom:25px;
+
+    overflow:hidden;
+}
+
+.floating-word{
+
+    position:absolute;
+
+    border:none;
+
+    background:rgba(255,255,255,0.95);
+
+    color:#d63384;
+
+    padding:14px 24px;
+
+    border-radius:50px;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 8px 18px rgba(0,0,0,0.12),
+    0 0 18px rgba(255,105,180,0.18);
+
+    transition:0.3s;
+
+    backdrop-filter:blur(8px);
+
+    animation-timing-function:ease-in-out;
+    animation-iteration-count:infinite;
+}
+
+.floating-word:hover{
+
+    transform:scale(1.12);
+
+    background:#d63384;
+
+    color:white;
+}
+
+.word1{
+    top:10%;
+    left:8%;
+    animation:move1 4s infinite;
+}
+
+.word2{
+    top:58%;
+    left:12%;
+    animation:move2 4.5s infinite;
+}
+
+.word3{
+    top:18%;
+    left:62%;
+    animation:move3 4s infinite;
+}
+
+.word4{
+    top:40%;
+    left:42%;
+    animation:move4 3.8s infinite;
+}
+
+.word5{
+    top:72%;
+    left:58%;
+    animation:move5 4.5s infinite;
+}
+
+.word6{
+    top:5%;
+    left:40%;
+    animation:move6 4s infinite;
+}
+
+.word7{
+    top:74%;
+    left:28%;
+    animation:move7 4.2s infinite;
+}
+
+.word8{
+    top:52%;
+    left:76%;
+    animation:move8 4.8s infinite;
+}
+
+@keyframes move1{
+    0%,100%{transform:translate(0,0);}
+    50%{transform:translate(25px,-18px);}
+}
+
+@keyframes move2{
+    0%,100%{transform:translate(0,0);}
+    50%{transform:translate(-22px,16px);}
+}
+
+@keyframes move3{
+    0%,100%{transform:translate(0,0);}
+    50%{transform:translate(18px,22px);}
+}
+
+@keyframes move4{
+    0%,100%{transform:translate(0,0);}
+    50%{transform:translate(-24px,-15px);}
+}
+
+@keyframes move5{
+    0%,100%{transform:translate(0,0);}
+    50%{transform:translate(22px,-20px);}
+}
+
+@keyframes move6{
+    0%,100%{transform:translate(0,0);}
+    50%{transform:translate(-18px,20px);}
+}
+
+@keyframes move7{
+    0%,100%{transform:translate(0,0);}
+    50%{transform:translate(25px,-15px);}
+}
+
+@keyframes move8{
+    0%,100%{transform:translate(0,0);}
+    50%{transform:translate(-20px,18px);}
+}
+
+#message{
+
+    margin-top:15px;
+
+    color:#b03060;
+
+    font-size:1.05rem;
+
+    line-height:1.8;
+
+    min-height:90px;
+}
+
+/* ================================= */
+/* CONTENIDO */
+/* ================================= */
+
+#mainContent{
+
+    display:none;
+
+    min-height:100vh;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+
+    position:relative;
+
+    z-index:3;
+}
+
+.card{
+
+    width:100%;
+    max-width:1000px;
+
+    background:rgba(255,255,255,0.9);
+
+    border-radius:45px;
+
+    padding:55px 35px;
+
+    text-align:center;
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,0.15),
+    0 0 35px rgba(255,182,193,0.15);
+
+    animation:showCard 1.8s ease;
+}
+
+.title{
+
+    font-family:'Great Vibes',cursive;
+
+    color:#d63384;
+
+    font-size:5.2rem;
+
+    margin-bottom:10px;
+}
+
+.subtitle{
+
+    color:#d63384;
+
+    font-size:1rem;
+
+    letter-spacing:3px;
+
+    margin-bottom:28px;
+}
+
+.flower{
+
+    font-size:4rem;
+
+    margin-bottom:28px;
+
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.2);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+/* ================================= */
+/* TARJETA */
+/* ================================= */
+
+.flip-container{
+
+    perspective:1200px;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:35px;
+}
+
+.flip-card{
+
+    width:430px;
+
+    height:540px;
+
+    position:relative;
+
+    transform-style:preserve-3d;
+
+    transition:transform 1s;
+
+    cursor:pointer;
+}
+
+.flip-card.flipped{
+
+    transform:rotateY(180deg);
+}
+
+.flip-side{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    backface-visibility:hidden;
+
+    border-radius:35px;
+
+    overflow:hidden;
+
+    border:8px solid white;
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,0.18),
+    0 0 25px rgba(255,182,193,0.25);
+}
+
+/* FRENTE */
+
+.front-message{
+
+    background:
+    linear-gradient(135deg,#ffb6c1,#ffe2ea,#fff4da);
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:35px;
+
+    text-align:center;
+}
+
+.front-content h2{
+
+    font-family:'Great Vibes',cursive;
+
+    color:white;
+
+    font-size:3.5rem;
+
+    line-height:1.3;
+
+    margin-bottom:22px;
+
+    text-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+.front-content p{
+
+    color:white;
+
+    font-size:1.12rem;
+
+    line-height:2;
+
+    margin-bottom:28px;
+
+    text-shadow:0 2px 8px rgba(0,0,0,0.12);
+}
+
+.front-content span{
+
+    display:inline-block;
+
+    background:rgba(255,255,255,0.22);
+
+    padding:12px 22px;
+
+    border-radius:30px;
+
+    color:white;
+
+    font-size:0.95rem;
+
+    backdrop-filter:blur(5px);
+
+    animation:pulseSoft 2s infinite;
+}
+
+/* FOTO */
+
+.photo-back{
+
+    transform:rotateY(180deg);
+}
+
+.photo-back img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+@keyframes pulseSoft{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.06);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+/* ================================= */
+/* TEXTO */
+/* ================================= */
+
+.message{
+
+    color:#555;
+
+    font-size:1.22rem;
+
+    line-height:2;
+
+    max-width:780px;
+
+    margin:auto;
+}
+
+.footer{
+
+    margin-top:42px;
+
+    color:#999;
+
+    font-style:italic;
+
+    font-size:1rem;
+}
+
+/* ================================= */
+/* ANIMACIONES */
+/* ================================= */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes showCard{
+
+    from{
+        opacity:0;
+        transform:scale(0.9);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* ================================= */
+/* RESPONSIVE */
+/* ================================= */
+
+@media(max-width:768px){
+
+    body{
+        overflow:auto;
+    }
+
+    .lock-title{
+        font-size:3.3rem;
+    }
+
+    .title{
+        font-size:3.8rem;
+    }
+
+    .message{
+        font-size:1rem;
+    }
+
+    .flip-card{
+
+        width:100%;
+        max-width:340px;
+
+        height:450px;
+    }
+
+    .front-content h2{
+        font-size:2.7rem;
+    }
+
+    .front-content p{
+        font-size:1rem;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+    <source src="music/musica para mamá.mp3" type="audio/mp3">
+</audio>
+
+<script>
+
+const elements = ["🌹","💖","✨","💕","🌸","💫"];
+
+for(let i=0;i<65;i++){
+
+    let item = document.createElement("div");
+
+    item.classList.add("floating");
+
+    item.innerHTML = elements[Math.floor(Math.random()*elements.length)];
+
+    item.style.left = Math.random()*100 + "vw";
+
+    item.style.fontSize = (Math.random()*40 + 28) + "px";
+
+    item.style.animationDuration = (Math.random()*8 + 6) + "s";
+
+    item.style.opacity = Math.random();
+
+    document.body.appendChild(item);
+}
+
+</script>
+
+<!-- PANTALLA -->
+
+<div id="lockScreen">
+
+<div class="lock-box">
+
+<h1 class="lock-title">
+Hay detalles que nacen del corazón 🌹
+</h1>
+
+<p class="lock-subtitle">
+
+Algunas palabras tienen la capacidad de describir el alma de una persona.
+Hoy hemos escondido este detalle detrás de una de ellas...
+Elige la que sientas que mejor representa tu esencia ✨
+
+</p>
+
+<div class="words-area">
+
+<button class="floating-word word1" onclick="checkWord('amor')">Amor</button>
+
+<button class="floating-word word2" onclick="checkWord('fortaleza')">Fortaleza</button>
+
+<button class="floating-word word3" onclick="checkWord('dulzura')">Dulzura</button>
+
+<button class="floating-word word4" onclick="checkWord('valentia')">Valentía</button>
+
+<button class="floating-word word5" onclick="checkWord('esperanza')">Esperanza</button>
+
+<button class="floating-word word6" onclick="checkWord('luz')">Luz</button>
+
+<button class="floating-word word7" onclick="checkWord('alegria')">Alegría</button>
+
+<button class="floating-word word8" onclick="checkWord('valor')">Valor</button>
+
+</div>
+
+<p id="message"></p>
+
+</div>
+
+</div>
+
+<!-- CONTENIDO -->
+
+<div id="mainContent">
+
+<div class="card">
+
+<h1 class="title">
+¡Rosa, Feliz Día de la Madre! 🌹
+</h1>
+
+<div class="subtitle">
+UNA SONRISA QUE ESCONDE UNA GRAN VALENTÍA
+</div>
+
+<div class="flower">
+🌺
+</div>
+
+<div class="flip-container">
+
+<div class="flip-card" id="flipCard">
+
+<div class="flip-side front-message">
+
+<div class="front-content">
+
+<h2>
+Para una mamá llena de valor 🌹
+</h2>
+
+<p>
+Tu sonrisa transmite alegría,
+pero tu corazón demuestra una valentía inmensa.
+Eres amor, esfuerzo
+y ternura convertidos en mujer ✨
+</p>
+
+<span>
+Toca esta tarjeta 🌸
+</span>
+
+</div>
+
+</div>
+
+<div class="flip-side photo-back">
+
+<img src="imagenes/rosa.jpg" alt="Rosa">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="message">
+
+Rosa, tu alegría ilumina el ambiente y hace que quienes te rodean
+siempre encuentren una sonrisa cerca.
+Pero detrás de esa dulzura existe también una mujer valiente,
+que enfrenta cada día con amor y determinación.
+<br><br>
+
+Hoy celebramos a una mamá admirable,
+que entrega lo mejor de sí incluso cuando la vida exige tanto.
+Gracias por inspirarnos con tu cariño, tu esfuerzo
+y la hermosa manera en la que nunca dejas de seguir adelante 💖
+
+</div>
+
+<div class="footer">
+
+Con muchísimo cariño, para ti 🌹
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const correctPassword = "valor";
+
+const music = document.getElementById("bgMusic");
+
+const wrongMessages = [
+
+"Qué bonita palabra… porque también vive dentro de ti. Pero hay una aún más especial esperándote 💖",
+
+"Esa palabra refleja una parte hermosa de quien eres… aunque todavía no es la indicada ✨",
+
+"También hay verdad en esa palabra… pero aún existe otra que abraza mejor tu esencia 🌸",
+
+"Cada palabra aquí tiene algo de ti… pero hay una que fue pensada especialmente para tu corazón 💕",
+
+"Las palabras bonitas nunca se equivocan del todo… pero todavía falta encontrar la más especial 🌷",
+
+"Hay una palabra aquí que guarda exactamente la fuerza y ternura que transmites cada día 🌹"
+
+];
+
+let lastMessage = -1;
+
+function checkWord(word){
+
+const message = document.getElementById("message");
+
+if(word === correctPassword){
+
+message.innerHTML =
+"Sí… esa palabra refleja el enorme valor y el corazón admirable que llevas dentro ✨";
+
+setTimeout(()=>{
+
+document.getElementById("lockScreen").style.display = "none";
+
+document.getElementById("mainContent").style.display = "flex";
+
+music.play();
+
+},1800);
+
+}else{
+
+let random;
+
+do{
+
+random = Math.floor(Math.random()*wrongMessages.length);
+
+}while(random === lastMessage);
+
+lastMessage = random;
+
+message.innerHTML = wrongMessages[random];
+}
+}
+
+const flipCard = document.getElementById("flipCard");
+
+flipCard.addEventListener("click", ()=>{
+
+flipCard.classList.toggle("flipped");
+
+});
+
+</script>
+
+</body>
+</html>
